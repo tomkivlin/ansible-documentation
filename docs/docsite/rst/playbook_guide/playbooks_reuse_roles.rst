@@ -255,7 +255,8 @@ Beginning with version 2.11, you may choose to enable role argument validation b
 specification. This specification is defined in the ``meta/argument_specs.yml`` file (or with the ``.yaml``
 file extension). When this argument specification is defined, a new task is inserted at the beginning of role execution
 that will validate the parameters supplied for the role against the specification. If the parameters fail
-validation, the role will fail execution.
+validation, the role will fail execution. This new, inserted, task is tagged with the `always` tag, so if the role is
+statically imported this task will run unless `--skip-tags` is used.
 
 .. note::
 
